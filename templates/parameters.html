@@ -1,0 +1,236 @@
+
+
+{% block content %}
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Health Symptoms Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/parawal.jpg' %}");
+            padding: 6% 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #a0652e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #110701;
+        }
+        .symptom {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: #ec9770;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .symptom img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 20px;
+            transition: width 0.3s, height 0.3s;
+        }
+        .symptom div {
+            font-size: 18px;
+            color: #0e0c0c;
+        }
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #eeb975;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color:#834908;
+        }
+        .details {
+            display: none;
+            font-size: 16px;
+            color: #a87373;
+            margin-left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Common Pet Symptoms to Watch Out</h1>
+        
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/Fever.png' %}" alt="Fever">
+            <div>Fever</div>
+            <div class="details">
+                <ul>
+                    <li>Increased Body Temperature: Use a pet thermometer to check if your pet's temperature is above the normal range (101-102.5°F for dogs and cats).</li>
+                    <li>Lethargy: Your pet may seem unusually tired and less active than normal.</li>
+                    <li>Shivering or Panting: Signs of discomfort such as shivering in cold environments or panting in warm environments can indicate a fever.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/ulcers.jpg' %}" alt="Ulcers">
+            <div>Ulcers</div>
+            <div class="details">
+                <ul>
+                    <li>Visible Sores: Look for open sores or lesions in the mouth, skin, or other body parts.</li>
+                    <li>Difficulty Eating: Your pet may have trouble eating or show signs of pain while chewing.</li>
+                    <li>Excessive Drooling: Increased salivation can be a sign of ulcers, particularly in the mouth.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/Faceswellinh.jpg' %}" alt="Facial Swelling">
+            <div>Facial Swelling</div>
+            <div class="details">
+                <ul>
+                    <li>Swollen Areas: Noticeable puffiness or swelling around the eyes, muzzle, or neck.</li>
+                    <li>Pain or Discomfort: Your pet may show signs of pain when the swollen area is touched.</li>
+                    <li>Difficulty Breathing: Severe swelling can lead to breathing difficulties, which is a medical emergency.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/lethargy.jpg' %}" alt="Short Term Lethargy">
+            <div>Short Term Lethargy</div>
+            <div class="details">
+                <ul>
+                    <li>Low Energy Levels: Your pet may appear unusually tired and less enthusiastic about activities they typically enjoy.</li>
+                    <li>Reduced Appetite: A lack of interest in food or treats can accompany lethargy.</li>
+                    <li>Sleeping More: An increase in sleeping time, even during the day, can indicate lethargy.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/lymph.jpg' %}" alt="Swollen Lymph Nodes">
+            <div>Swollen Lymph Nodes</div>
+            <div class="details">
+                <ul>
+                    <li>Enlarged Nodes: Feel for swollen lymph nodes under the jaw, behind the knees, or in the shoulder area.</li>
+                    <li>Discomfort: Your pet may show signs of discomfort or pain when these areas are touched.</li>
+                    <li>Lethargy: Accompanying signs of illness such as lethargy or fever may also be present.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/diarrhea.jpg' %}" alt="Diarrhea with Mucus">
+            <div>Diarrhea with Mucus</div>
+            <div class="details">
+                <ul>
+                    <li>Loose Stools: Frequent, loose, or watery stools with a gelatinous mucus coating.</li>
+                    <li>Straining: Your pet may strain excessively while defecating.</li>
+                    <li>Dehydration: Signs of dehydration such as dry gums and loss of skin elasticity can accompany diarrhea.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/hairloss.jpeg' %}" alt="Hair Loss">
+            <div>Hair Loss</div>
+            <div class="details">
+                <ul>
+                    <li>Bald Patches: Noticeable areas of missing fur on the body.</li>
+                    <li>Excessive Shedding: Increased fur loss, more than usual, found around the house or on your pet's bedding.</li>
+                    <li>Itching or Scratching: Frequent scratching, biting, or licking the affected areas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/jaudice.jpg' %}" alt="Jaundice">
+            <div>Jaundice</div>
+            <div class="details">
+                <ul>
+                    <li>Yellowing of Skin or Eyes: A yellow tint in the whites of the eyes, gums, or skin.</li>
+                    <li>Dark Urine: Urine that is darker than usual can be a sign of jaundice.</li>
+                    <li>Lethargy and Loss of Appetite: General signs of illness such as being less active and eating less.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/dehydration.jpg' %}" alt="Dehydration">
+            <div>Dehydration</div>
+            <div class="details">
+                <ul>
+                    <li>Dry Gums and Nose: Check for dryness in the mouth and nose.</li>
+                    <li>Skin Elasticity: Gently pinch the skin on the back of your pet’s neck. If it doesn't snap back quickly, your pet may be dehydrated.</li>
+                    <li>Sunken Eyes: Eyes may appear sunken and dull.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/Seizures.jpg' %}" alt="Seizures">
+            <div>Seizures</div>
+            <div class="details">
+                <ul>
+                    <li>Convulsions: Uncontrolled shaking, twitching, or jerking of the body.</li>
+                    <li>Loss of Consciousness: Your pet may collapse and become unresponsive.</li>
+                    <li>Foaming at the Mouth: Excessive drooling or foaming can occur during a seizure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="symptom" onclick="toggleImageSize(this)">
+            <img src="{% static 'images/Hyperesthesia.jpg' %}" alt="Hyperesthesia">
+            <div>Hyperesthesia</div>
+            <div class="details">
+                <ul>
+                    <li>Excessive Sensitivity: Overreaction to touch, such as flinching or twitching when petted.</li>
+                    <li>Dilated Pupils: Eyes may appear wide and pupils larger than usual.</li>
+                    <li>Self-Mutilation: Your pet may excessively groom or bite themselves.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="http://127.0.0.1:8000/" class="back-button">Back</a>
+    </div>
+
+    <script>
+        function toggleImageSize(element) {
+            const img = element.querySelector('img');
+            const details = element.querySelector('.details');
+            const isEnlarged = img.classList.contains('enlarged');
+            if (isEnlarged) {
+                img.style.width = '100px';
+                img.style.height = '100px';
+                img.classList.remove('enlarged');
+                details.style.display = 'none';
+            } else {
+                img.style.width = '300px';
+                img.style.height = '300px';
+                img.classList.add('enlarged');
+                details.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+
+<!-- map section -->
+
+<section class="map_section">
+    <div id="map" class="h-100 w-100 ">
+    </div>
+
+    <div class="form_container ">
+      <div class="row">
+        <div class="col-md-8 col-sm-10 offset-md-4">
+          <form method="post">
+            {% csrf_token %}
+            <div class="text-center">
+              <h3>
+                Pet Health Monitoring
+              </h3>
+            </div>
+            
+              <div>
+                <input type="text" placeholder="Animal Name" name="animal" class="pt-3" required>
+              </div>
+              <div>
+                <input type="text" placeholder="Symptoms_1" name="sym1" class="pt-3" required>
+              </div>
+              <div>
+                <input type="text" placeholder="Symptoms_2" name="sym2" class="pt-3" required>
+              </div>
+              <div>
+                <input type="text" placeholder="Symptoms_3" name="sym3" class="pt-3" required>
+              </div>
+              <div>
+                <input type="text" placeholder="Symptoms_4" name="sym4" class="pt-3" required>
+              </div>
+              <div>
+                <input type="text" placeholder="Symptoms_5" name="sym5" class="pt-3" required>
+              </div>
+           
+              
+            <div class="d-flex justify-content-center">
+              <button type="submit">
+                Predict Pet Health
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+{% endblock %}

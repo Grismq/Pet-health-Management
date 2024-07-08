@@ -1,0 +1,264 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Breeds Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/brewal.png' %}");
+            padding: 6% 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 80%;
+            display: grid;
+            background-position: center;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        .animal {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .animal:hover {
+            transform: translateY(-5px);
+        }
+        .animal img {
+            width: 100%;
+            height: 55%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .back-button {
+            display: block;
+            width: 120px;
+            margin: 40px auto;
+            padding: 10px;
+            text-align: center;
+            background-color:#86684c;
+            color: rgb(224, 211, 211);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color:#462e10;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgb(24, 22, 22);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dogs -->
+        <div class="animal" onclick="openOverlay('labrador')">
+            <img src="{% static 'images/Lab.jpg' %}" alt="Labrador Retriever">
+            <h2>Labrador Retriever</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('bulldog')">
+            <img src="{% static 'images/Bulldog.jpg' %}" alt="Bulldog">
+            <h2>Bulldog</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('poodle')">
+            <img src="{% static 'images/poodle.jpg' %}" alt="Poodle">
+            <h2>Poodle</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('german-shepherd')">
+            <img src="{% static 'images/german.jpg' %}" alt="German Shepherd">
+            <h2>German Shepherd</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('golden-retriever')">
+            <img src="{% static 'images/golden.jpg' %}" alt="Golden Retriever">
+            <h2>Golden Retriever</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('beagle')">
+            <img src="{% static 'images/beagle.jpg' %}" alt="Beagle">
+            <h2>Beagle</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('boxer')">
+            <img src="{% static 'images/boxer.jpg' %}" alt="Boxer">
+            <h2>Boxer</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('dachshund')">
+            <img src="{% static 'images/dashsh.jpg' %}" alt="Dachshund">
+            <h2>Dachshund</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('rottweiler')">
+            <img src="{% static 'images/Rottweiler.jpg' %}" alt="Rottweiler">
+            <h2>Rottweiler</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('siberian-husky')">
+            <img src="{% static 'images/siberian husky.jpg' %}" alt="Siberian Husky">
+            <h2>Siberian Husky</h2>
+        </div>
+        <!-- Cats -->
+        <div class="animal" onclick="openOverlay('persian')">
+            <img src="{% static 'images/Persian cat.jpg' %}" alt="Persian Cat">
+            <h2>Persian Cat</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('siamese')">
+            <img src="{% static 'images/Siamese Cat.jpg' %}" alt="Siamese Cat">
+            <h2>Siamese Cat</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('maine-coon')">
+            <img src="{% static 'images/Maine Cat.jpg' %}" alt="Maine Coon">
+            <h2>Maine Coon</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('ragdoll')">
+            <img src="{% static 'images/ragdollb.jpg' %}" alt="Ragdoll Cat">
+            <h2>Ragdoll Cat</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('bengal')">
+            <img src="{% static 'images/bengall.jpg' %}" alt="Bengal Cat">
+            <h2>Bengal Cat</h2>
+        </div>
+        <!-- Cows -->
+        <div class="animal" onclick="openOverlay('holstein')">
+            <img src="{% static 'images/holstein.jpeg' %}" alt="Holstein Cow">
+            <h2>Holstein Cow</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('hereford')">
+            <img src="{% static 'images/hereford.jpg' %}" alt="Hereford Cow">
+            <h2>Hereford Cow</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('angus')">
+            <img src="{% static 'images/angus.jpg' %}" alt="Angus Cow">
+            <h2>Angus Cow</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('simmental')">
+            <img src="{% static 'images/Simmental.jpg' %}" alt="Simmental Cow">
+            <h2>Simmental Cow</h2>
+        </div>
+        <div class="animal" onclick="openOverlay('jersey')">
+            <img src="{% static 'images/jersey.jpeg' %}" alt="Jersey Cow">
+            <h2>Jersey Cow</h2>
+        </div>
+    </div>
+
+    <!-- Overlay for Enlarged Image -->
+    <div class="overlay" id="overlay" onclick="closeOverlay()">
+        <span class="close-btn">&times;</span>
+        <img id="overlay-img" src="" alt="Enlarged Image">
+    </div>
+    <a href="http://127.0.0.1:8000/" class="back-button">Back</a>
+    <script>
+        function openOverlay(breed) {
+            const overlay = document.getElementById('overlay');
+            const overlayImg = document.getElementById('overlay-img');
+
+            // Set the image source based on the clicked breed
+            switch (breed) {
+                // Dogs
+                case 'labrador':
+                    overlayImg.src = '{% static "images/Lab.jpg" %}';
+                    break;
+                case 'bulldog':
+                    overlayImg.src = '{% static "images/Bulldog.jpg" %}';
+                    break;
+                case 'poodle':
+                    overlayImg.src = '{% static "images/poodle.jpg" %}';
+                    break;
+                case 'german-shepherd':
+                    overlayImg.src = '{% static "images/german.jpg" %}';
+                    break;
+                case 'golden-retriever':
+                    overlayImg.src = '{% static "images/golden.jpg" %}';
+                    break;
+                case 'beagle':
+                    overlayImg.src = '{% static "images/beagle.jpg" %}';
+                    break;
+                case 'boxer':
+                    overlayImg.src = '{% static "images/boxer.jpg" %}';
+                    break;
+                case 'dachshund':
+                    overlayImg.src = '{% static "images/dashsh.jpg" %}';
+                    break;
+                case 'rottweiler':
+                    overlayImg.src = '{% static "images/Rottweiler.jpg" %}';
+                    break;
+                case 'siberian-husky':
+                    overlayImg.src = '{% static "images/siberian husky.jpg" %}';
+                    break;
+                // Cats
+                case 'persian':
+                    overlayImg.src = '{% static "images/Persian cat.jpg" %}';
+                    break;
+                case 'siamese':
+                    overlayImg.src = '{% static "images/Siamese Cat.jpg" %}';
+                    break;
+                case 'maine-coon':
+                    overlayImg.src = '{% static "images/Maine Cat.jpg" %}';
+                    break;
+                case 'ragdoll':
+                    overlayImg.src = '{% static "images/ragdollb.jpg" %}';
+                    break;
+                case 'bengal':
+                    overlayImg.src = '{% static "images/bengall.jpg" %}';
+                    break;
+                // Cows
+                case 'holstein':
+                    overlayImg.src = '{% static "images/holstein.jpeg" %}';
+                    break;
+                case 'hereford':
+                    overlayImg.src = '{% static "images/hereford.jpg" %}';
+                    break;
+                case 'angus':
+                    overlayImg.src = '{% static "images/angus.jpg" %}';
+                    break;
+                case 'simmental':
+                    overlayImg.src = '{% static "images/Simmental.jpg" %}';
+                    break;
+                case 'jersey':
+                    overlayImg.src = '{% static "images/jersey.jpeg" %}';
+                    break;
+                default:
+                    overlayImg.src = '';
+            }
+
+            // Display the overlay
+            overlay.style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

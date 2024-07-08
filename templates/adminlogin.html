@@ -1,0 +1,47 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+
+<!-- map section -->
+<body>
+<section class="map_section">
+    <div id="map" class="h-100 w-100 ">
+    </div>
+
+    <div class="form_container ">
+      <div class="row">
+        <div class="col-md-8 col-sm-10 offset-md-4">
+          <form method="post">
+            {% csrf_token %}
+            <div class="text-center">
+              <h3>
+                Admin Login
+              </h3>
+            </div>
+            
+              <div>
+                <input type="text" placeholder="Username" name="uname" class="pt-3">
+              </div>
+            
+           
+            <div>
+                <input type="password" placeholder="Password" name="psw" class="pt-3">
+              </div>
+              
+            <div class="d-flex justify-content-center">
+              <button type="submit">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</body>
+
+
+
+{% endblock %}

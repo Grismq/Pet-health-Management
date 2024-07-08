@@ -1,0 +1,176 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Pet News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/newwal.jpg' %}");
+            padding: 6% 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color:rgba(53, 25, 1, 0.8);
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin: 5px 0 20px;
+            color: #555;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .news-item {
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .news-item h3 {
+            color: rgba(53, 25, 1, 0.8);
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .news-item p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .news-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        .news-item ul li {
+            padding-left: 30px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .news-item ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color:rgba(53, 25, 1, 0.8);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .back-button {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #834908;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color:#c7b38f ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Recent Pet News</h1>
+            <p>Stay informed about the latest happenings in the world of pets.</p>
+        </div>
+        <div class="content">
+            <div class="news-item">
+                <h3>New Outbreak of Canine Influenza in California</h3>
+                <p><strong>Date:</strong> July 3, 2024</p>
+                <p>A recent outbreak of canine influenza has been reported in several counties in California. Pet owners are advised to monitor their dogs for symptoms such as coughing, sneezing, and lethargy.</p>
+                <p><strong>Source:</strong> California Department of Public Health</p>
+                <p><strong>Impact:</strong> Hundreds of dogs affected, multiple veterinary clinics overwhelmed.</p>
+                <h4>Prevention Tips</h4>
+                <ul>
+                    <li>Keep your dog away from crowded places</li>
+                    <li>Ensure vaccinations are up to date</li>
+                    <li>Consult your vet if symptoms appear</li>
+                </ul>
+            </div>
+            <div class="news-item">
+                <h3>Feline Parvovirus Outbreak in New York City</h3>
+                <p><strong>Date:</strong> June 28, 2024</p>
+                <p>Veterinarians in New York City have reported an outbreak of feline parvovirus, also known as feline panleukopenia. The virus is highly contagious and can be fatal for kittens and unvaccinated cats.</p>
+                <p><strong>Source:</strong> NYC Animal Care Centers</p>
+                <p><strong>Impact:</strong> Several shelters are experiencing high infection rates.</p>
+                <h4>Prevention Tips</h4>
+                <ul>
+                    <li>Ensure your cat is vaccinated</li>
+                    <li>Keep your cat indoors to reduce exposure</li>
+                    <li>Disinfect any areas where an infected cat has been</li>
+                </ul>
+            </div>
+            <div class="news-item">
+                <h3>Rabies Alert in Texas</h3>
+                <p><strong>Date:</strong> June 20, 2024</p>
+                <p>A rabies alert has been issued in Texas following several confirmed cases in wildlife. Pet owners are advised to ensure their pets are vaccinated against rabies and to avoid contact with wild animals.</p>
+                <p><strong>Source:</strong> Texas Department of State Health Services</p>
+                <p><strong>Impact:</strong> Increased vigilance in affected areas.</p>
+                <h4>Prevention Tips</h4>
+                <ul>
+                    <li>Vaccinate your pets against rabies</li>
+                    <li>Avoid contact with wild animals</li>
+                    <li>Report any unusual animal behavior to local authorities</li>
+                </ul>
+            </div>
+            <div class="news-item">
+                <h3>Pet Food Recall Due to Contamination</h3>
+                <p><strong>Date:</strong> July 1, 2024</p>
+                <p>A major pet food manufacturer has issued a recall for several of its products due to potential contamination with Salmonella. Pet owners are urged to check the recall list and avoid feeding the affected products to their pets.</p>
+                <p><strong>Source:</strong> FDA</p>
+                <p><strong>Impact:</strong> Nationwide recall affecting thousands of products.</p>
+                <h4>Prevention Tips</h4>
+                <ul>
+                    <li>Check the recall list for affected products</li>
+                    <li>Dispose of any contaminated pet food</li>
+                    <li>Contact your vet if your pet shows signs of illness</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Powered by Urban Pet Hospital & Resort</p>
+        </div>
+        <a href="http://127.0.0.1:8000/" class="back-button">Back</a>
+    </div>
+</body>
+</html>
+{% endblock %}

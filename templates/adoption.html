@@ -1,0 +1,55 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<div class="contact">
+    <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+               <!-- <div class="titlepage text_align_left">
+                   <h2>Adoption</h2>
+               </div>-->
+             </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+            
+           
+             
+             <table class="table">
+               <thead class="thead-light">
+                 <tr>
+                   
+                   <th scope="col">Pet_Image</th>
+                   <th scope="col">Breed</th>
+                   <th scope="col">Price</th>
+                   <th scope="col">Address</th>
+                   
+                   <th scope="col">Contact No</th>
+                   </tr>
+               </thead>
+               
+               <tbody>
+                 
+                   {% for i in pet %}
+                 <tr>
+                    <td><img src="{{i.pet_image.url}}" height="280" width="300"></td>
+                   <td>{{i.pet_name}}</td>
+                   <td>{{i.pet_price}}</td>
+                   <td>{{i.address}}</td>
+                   
+                   <td>{{i.contact_no}}</td>
+                   
+                   
+
+                 </tr>
+                 {% endfor %}
+               </tbody>
+             </table>
+          </div>
+           
+       </div>
+    </div>
+ </div>
+
+{% endblock %}

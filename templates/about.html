@@ -1,0 +1,174 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Health Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/abowal.jpg' %}");
+            padding: 6% 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #6b3b0d;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content div {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px;
+        }
+        .content div h3 {
+            color:#6b3b0d;
+        }
+        .content div ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content div ul li {
+            background: url('checkmark.png') no-repeat left center;
+            background-size: 20px;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .back-button {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #834908;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color:#c7b38f ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Checklist for Your Pet's Full Body Health</h1>
+            <p>You probably see your pet every day. And he may look perfectly fine to you, but is he really? What does a normal, healthy pet look like?</p>
+        </div>
+        <div class="content">
+            <div>
+                <h3>Ears</h3>
+                <ul>
+                    <li>Clean; no bad odor, redness, or excessive wax</li>
+                    <li>Regularly check for signs of infection or parasites</li>
+                    <li>Maintain regular cleaning routine</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Eyes</h3>
+                <ul>
+                    <li>Bright and clear; no redness or cloudiness; not watery</li>
+                    <li>Watch for signs of discomfort such as squinting or rubbing</li>
+                    <li>Regular vet check-ups to monitor eye health</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Mouth</h3>
+                <ul>
+                    <li>No “doggy breath,” red or swollen gums, or discolored teeth</li>
+                    <li>Regular dental cleanings and check-ups</li>
+                    <li>Provide dental chews or toys to help maintain oral health</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Skin & Coat</h3>
+                <ul>
+                    <li>Healthy-looking coat; no red, flaky, or excessively dry skin; no lumps or scabs</li>
+                    <li>Regular grooming and bathing</li>
+                    <li>Check for fleas, ticks, and other parasites</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Bones & Joints</h3>
+                <ul>
+                    <li>Normal activity level; no limping or trouble standing up; no hesitating to walk or use stairs</li>
+                    <li>Ensure a balanced diet to support joint health</li>
+                    <li>Provide regular exercise appropriate for your pet's age and breed</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Weight</h3>
+                <ul>
+                    <li>A visible “waist” or slight tuck-in behind the ribs; ribs should be easy to feel but not see</li>
+                    <li>Monitor weight regularly and adjust diet as necessary</li>
+                    <li>Consult with your vet for a suitable weight management plan</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <h3>Heart & Lungs</h3>
+                <ul>
+                    <li>No coughing, sneezing, wheezing, or labored breathing; watch for reluctance to exercise or play; or getting tired or winded more easily than normal</li>
+                    <li>Regular vet check-ups to monitor heart and lung health</li>
+                    <li>Provide a smoke-free environment</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Digestive System</h3>
+                <ul>
+                    <li>Normal appetite; no diarrhea or vomiting; watch for swollen abdomen, burping more than usual, passing gas, passing stool that’s a different color, having trouble passing stool</li>
+                    <li>Provide a balanced diet with proper nutrients</li>
+                    <li>Ensure access to clean, fresh water at all times</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Urinary System</h3>
+                <ul>
+                    <li>No accidents in the house (if house-trained); watch for urine that looks or smells different, trouble urinating, or inability to urinate (if your pet is trying to urinate and can’t, seek immediate medical attention. It could indicate a life-threatening blockage!)</li>
+                    <li>Regular vet check-ups to monitor urinary health</li>
+                    <li>Provide plenty of opportunities for outdoor breaks</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Your healthy pet begins with you! Scheduling regular wellness visits with your veterinarian, keeping your pet's vaccines up-to-date, staying on top of parasite prevention, feeding a 100% nutritionally complete diet that is formulated for your pet, and getting adequate exercise can work wonders for your pet's health.</p>
+            <p>Source: Grisma.com</p>
+        </div>
+        <a href="http://127.0.0.1:8000/" class="back-button">Back</a>
+    </div>
+</body>
+</html>
+{% endblock %}

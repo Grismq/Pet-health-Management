@@ -1,0 +1,277 @@
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Health Precautions</title>
+    <style>
+        body {
+            background-image: url("{% static 'images/prewal.jpg' %}");
+            padding: 6% 0;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(94, 58, 25, 0.8); /* Semi-transparent white background for readability */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #faf7f7;
+        }
+        .animal {
+            background: #e2e2e2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .animal:hover {
+            background: #d1d1d1;
+        }
+        .options {
+            
+            display: none; /* Initially hide options */
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #bd8362;
+            border-radius: 5px;
+        }
+        .options button {
+            
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color:#eeb975;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .options button:hover {
+            background-color:  #dbb07e;
+        }
+        .info {
+            font-style: italic;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #dbb07e;
+            border-radius: 5px;
+            display: none; /* Initially hide info */
+        }
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #eeb975;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #834908
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Precautions for Different Animals</h1>
+        
+        <div class="animal" onclick="showOptions(this)">
+           <strong> Dogs </strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Rabies, Distemper, Parvovirus, Adenovirus, Parainfluenza, Bordetella, Lyme disease.
+                </div>
+                <button onclick="showInfo(this)"><strong>Regular Check-ups</strong></button>
+                <div class="info">
+                    Annual vet visits for health screening and parasite control.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet and Exercise</strong></button>
+                <div class="info">
+                    Balanced diet and regular exercise to maintain a healthy weight.
+                </div>
+            </div>
+        </div>
+
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Cats</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Rabies, Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia, Feline Leukemia Virus.
+                </div>
+                <button onclick="showInfo(this)"><strong>Regular Check-ups</strong></button>
+                <div class="info">
+                    Annual vet visits for health screening and parasite control.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet and Exercise</strong></button>
+                <div class="info">
+                    Balanced diet and regular exercise to prevent obesity.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Chickens</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Marek’s disease, Newcastle disease, Infectious Bronchitis, Fowl Pox.
+                </div>
+                <button onclick="showInfo(this)"><strong>Housing</strong></button>
+                <div class="info">
+                    Clean and dry living environment to prevent diseases.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet</strong></button>
+                <div class="info">
+                    Balanced diet with necessary vitamins and minerals.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Monkeys</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Measles, Rabies, Tetanus, Hepatitis A and B.
+                </div>
+                <button onclick="showInfo(this)"><strong>Regular Check-ups</strong></button>
+                <div class="info">
+                    Regular vet visits for health monitoring and parasite control.
+                </div>
+                <button onclick="showInfo(this)"><strong>Enrichment</strong></button>
+                <div class="info">
+                    Provide mental and physical stimulation to prevent boredom and stress.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Turtles</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Housing</strong></button>
+                <div class="info">
+                    Clean and temperature-controlled aquatic environment.
+                </div>
+                <button onclick="showInfo(this)"><strong>Hygiene</strong></button>
+                <div class="info">
+                    Regular cleaning of habitat to prevent shell and skin infections.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet and Exercise</strong></button>
+                <div class="info">
+                    Balanced diet with necessary calcium and vitamins.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Birds</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Avian Influenza, Newcastle disease (depending on species).
+                </div>
+                <button onclick="showInfo(this)"><strong>Housing</strong></button>
+                <div class="info">
+                    Clean and spacious cage with proper ventilation.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet and Exercise</strong></button>
+                <div class="info">
+                    Balanced diet with necessary vitamins and minerals.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Sheep</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Clostridial diseases, Footrot, Rabies (if necessary).
+                </div>
+                <button onclick="showInfo(this)"><strong>Grazing Management</strong></button>
+                <div class="info">
+                    Rotational grazing to prevent overgrazing and parasite build-up.
+                </div>
+                <button onclick="showInfo(this)"><strong>.Shearing</button>
+                <div class="info">
+                    Regular shearing to maintain hygiene and prevent heat stress.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Goats</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Clostridial diseases, Rabies (if necessary), Pneumonia.
+                </div>
+                <button onclick="showInfo(this)"><strong>Grazing Management</strong></button>
+                <div class="info">
+                    Rotational grazing to maintain pasture health and reduce parasites.
+                </div>
+                <button onclick="showInfo(this)"><strong>Hoof Trimming</strong></button>
+                <div class="info">
+                    Regular hoof trimming to prevent overgrowth and lameness.
+                </div>
+            </div>
+        </div>
+        <div class="animal" onclick="showOptions(this)">
+            <strong>Ducks</strong>
+            <div class="options">
+                <button onclick="showInfo(this)"><strong>Vaccinations</strong></button>
+                <div class="info">
+                    Duck Viral Enteritis, Avian Influenza (if necessary).
+                </div>
+                <button onclick="showInfo(this)"><strong>Housing</strong></button>
+                <div class="info">
+                    Clean and dry living environment with access to water for swimming.
+                </div>
+                <button onclick="showInfo(this)"><strong>Diet and Exercise</strong></button>
+                <div class="info">
+                    Balanced diet with necessary vitamins and minerals.
+                </div>
+            </div>
+        </div>
+
+        <!-- Include other animal sections as per your original code -->
+
+        <a href="http://127.0.0.1:8000/" class="back-button">Back</a>
+    </div>
+
+    <script>
+        function showOptions(element) {
+            const options = element.querySelector('.options');
+            const allOptions = document.querySelectorAll('.options');
+            allOptions.forEach(opt => {
+                if (opt !== options) {
+                    opt.style.display = 'none';
+                }
+            });
+            options.style.display = 'block';
+        }
+
+        function showInfo(button) {
+            const info = button.nextElementSibling;
+            const allInfo = button.parentElement.querySelectorAll('.info');
+            allInfo.forEach(i => i.style.display = 'none');
+            info.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+{% endblock %}
